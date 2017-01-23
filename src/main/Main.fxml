@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="807.0" prefWidth="1337.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Life Cycle of an ARM Instruction">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <HBox alignment="CENTER" prefHeight="42.0" prefWidth="600.0" spacing="10.0">
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Choose ARM Instruction:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <MenuButton fx:id="mb" mnemonicParsing="false" text="Instruction...">
+              <items>
+                <MenuItem fx:id="dpi" mnemonicParsing="false" onAction="#dataImmItemClicked" text="Data Processing with Immediate Addressing" />
+                <MenuItem fx:id="dpr" mnemonicParsing="false" onAction="#dataRegItemClicked" text="Data Processing with Register Addressing" />
+                <MenuItem fx:id="ldr" mnemonicParsing="false" onAction="#loadItemClicked" text="LDR" />
+                <MenuItem fx:id="str" mnemonicParsing="false" onAction="#storeItemClicked" text="STR" />
+              </items>
+            </MenuButton>
+         </children>
+      </HBox>
+      <Separator layoutX="10.0" layoutY="634.0" prefWidth="1337.0" />
+      <Pane blendMode="MULTIPLY">
+         <children>
+            <ImageView fitHeight="467.0" fitWidth="870.0" layoutX="224.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../image/diagram.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <Line fx:id="pcp" endX="348.0" endY="265.0" startX="325.0" startY="265.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="pcH1" endX="392.0" endY="265.0" startX="368.0" startY="265.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="instrH" endX="480.0" endY="265.0" startX="463.0" startY="265.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="cond" endX="523.0" endY="99.0" startX="480.0" startY="99.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="op" endX="523.0" endY="116.0" startX="480.0" startY="116.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="funct" endX="523.0" endY="131.0" startX="480.0" startY="131.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="rd" endX="523.0" endY="147.0" startX="480.0" startY="147.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="pcSrcH1" endX="619.0" endY="52.0" startX="315.0" startY="52.0" stroke="#1200ff" strokeWidth="3.0" visible="false" />
+            <Line fx:id="pcSrcH2" endX="619.0" endY="68.0" startX="568.0" startY="68.0" stroke="#1200ff" strokeWidth="3.0" visible="false" />
+            <Line fx:id="memToRegH" endX="1018.0" endY="83.0" startX="568.0" startY="83.0" stroke="#1200ff" strokeWidth="3.0" visible="false" />
+            <Line fx:id="memWriteH" endX="932.0" endY="99.0" startX="568.0" startY="99.0" stroke="#1200ff" strokeWidth="3.0" visible="false" />
+            <Line fx:id="aluControlH" endX="793.0" endY="115.0" startX="568.0" startY="115.0" stroke="#1200ff" strokeWidth="3.0" visible="false" />
+            <Line fx:id="aluSrcH" endX="731.0" endY="131.0" startX="568.0" startY="131.0" stroke="#1200ff" strokeWidth="3.0" visible="false" />
+            <Line fx:id="immSrcH1" endX="697.0" endY="146.0" startX="568.0" startY="146.0" stroke="#1200ff" strokeWidth="3.0" visible="false" />
+            <Line fx:id="regWriteH" endX="637.0" endY="162.0" startX="568.0" startY="162.0" stroke="#1200ff" strokeWidth="3.0" visible="false" />
+            <Line fx:id="flagsH1" endX="523.0" endY="186.0" startX="507.0" startY="186.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="flagsH2" endX="827.0" endY="210.0" startX="507.0" startY="210.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="flagsH3" endX="827.0" endY="257.0" startX="813.0" startY="257.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="regSrcH" endX="540.0" endY="225.0" startX="524.0" startY="225.0" stroke="#1200ff" strokeWidth="3.0" visible="false" />
+            <Line fx:id="a1" endX="584.0" endY="257.0" startX="533.0" startY="257.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="a2" endX="585.0" endY="288.0" startX="552.0" startY="288.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="instrMux1" endX="513.0" endY="250.0" startX="481.0" startY="250.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="instrMux2" endX="530.0" endY="281.0" startX="481.0" startY="281.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="a3H1" endX="530.0" endY="297.0" startX="525.0" startY="297.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="a3H2" endX="585.0" endY="313.0" startX="481.0" startY="313.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="wd3" endX="585.0" endY="328.0" startX="568.0" startY="328.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="r15" endX="585.0" endY="344.0" startX="525.0" startY="344.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="extend" endX="584.0" endY="392.0" startX="481.0" startY="392.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="extImmH2" endX="715.0" endY="384.0" startX="690.0" startY="384.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="immSrcH2" endX="697.0" endY="360.0" startX="638.0" startY="360.0" stroke="#1200ff" strokeWidth="3.0" visible="false" />
+            <Line fx:id="srcA" endX="776.0" endY="257.0" startX="690.0" startY="257.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="srcB" endX="776.0" endY="297.0" startX="742.0" startY="297.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="rd2H1" endX="707.0" endY="289.0" startX="690.0" startY="289.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="rd2H2" endX="723.0" endY="289.0" startX="707.0" startY="289.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="extImmH1" endX="723.0" endY="304.0" startX="715.0" startY="304.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="writeDataH" endX="888.0" endY="321.0" startX="708.0" startY="321.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="aluResultH1" endX="887.0" endY="277.0" startX="813.0" startY="277.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="readDataH1" endX="1002.0" endY="277.0" startX="950.0" startY="277.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="readDataH2" endX="1009.0" endY="336.0" startX="1003.0" startY="336.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="aluResultH2" endX="1009.0" endY="351.0" startX="880.0" startY="351.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="resultH1" endX="1037.0" endY="344.0" startX="1030.0" startY="344.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="resultH2" endX="1037.0" endY="415.0" startX="568.0" startY="415.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="resultH3" endX="568.0" endY="415.0" startX="282.0" startY="415.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="resultH4" endX="305.0" endY="257.0" startX="282.0" startY="257.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="pcH2" endX="397.0" endY="344.0" startX="382.0" startY="344.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="four1" endX="397.0" endY="367.0" startX="393.0" startY="367.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="pcPlus4H1" endX="445.0" endY="356.0" startX="420.0" startY="356.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="pcPlus4H2" endX="500.0" endY="356.0" startX="445.0" startY="356.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="pcPlus4H3" endX="445.0" endY="384.0" startX="298.0" startY="384.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="pcPlus4H4" endX="306.0" endY="273.0" startX="298.0" startY="273.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="four2" endX="501.0" endY="333.0" startX="497.0" startY="333.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="fifteen" endX="515.0" endY="265.0" startX="507.0" startY="265.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="pcSrcV1" endX="315.0" endY="250.0" startX="315.0" startY="52.0" stroke="#1200ff" strokeWidth="3.0" visible="false" />
+            <Line fx:id="pcSrcV2" endX="619.0" endY="53.0" startX="619.0" startY="68.0" stroke="#1200ff" strokeWidth="3.0" visible="false" />
+            <Line fx:id="instrV1" endX="480.0" endY="265.0" startX="480.0" startY="100.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="instrV2" endX="480.0" endY="265.0" startX="480.0" startY="250.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="instrV3" endX="480.0" endY="281.0" startX="480.0" startY="265.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="instrV4" endX="480.0" endY="313.0" startX="480.0" startY="265.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="instrV5" endX="480.0" endY="392.0" startX="480.0" startY="265.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="flagsV1" endX="507.0" endY="210.0" startX="507.0" startY="186.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="flagsV2" endX="827.0" endY="257.0" startX="827.0" startY="212.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="regWriteV" endX="637.0" endY="240.0" startX="637.0" startY="162.0" stroke="#1200ff" strokeWidth="3.0" visible="false" />
+            <Line fx:id="immSrcV1" endX="697.0" endY="359.0" startX="697.0" startY="146.0" stroke="#1200ff" strokeWidth="3.0" visible="false" />
+            <Line fx:id="immSrcV2" endX="638.0" endY="375.0" startX="638.0" startY="360.0" stroke="#1200ff" strokeWidth="3.0" visible="false" />
+            <Line fx:id="aluSrcV" endX="731.0" endY="280.0" startX="731.0" startY="131.0" stroke="#1200ff" strokeWidth="3.0" visible="false" />
+            <Line fx:id="aluControlV" endX="793.0" endY="248.0" startX="793.0" startY="115.0" stroke="#1200ff" strokeWidth="3.0" visible="false" />
+            <Line fx:id="memWriteV" endX="932.0" endY="240.0" startX="932.0" startY="99.0" stroke="#1200ff" strokeWidth="3.0" visible="false" />
+            <Line fx:id="memToRegV" endX="1018.0" endY="328.0" startX="1018.0" startY="83.0" stroke="#1200ff" strokeWidth="3.0" visible="false" />
+            <Line fx:id="regSrcV1" endX="524.0" endY="242.0" startX="524.0" startY="225.0" stroke="#1200ff" strokeWidth="3.0" visible="false" />
+            <Line fx:id="regSrcV2" endX="540.0" endY="273.0" startX="540.0" startY="202.0" stroke="#1200ff" strokeWidth="3.0" visible="false" />
+            <Line fx:id="a3V" endX="525.0" endY="312.0" startX="525.0" startY="297.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="writeDataV" endX="706.0" endY="321.0" startX="706.0" startY="290.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="aluResultV" endX="880.0" endY="351.0" startX="880.0" startY="277.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="readDataV" endX="1002.0" endY="334.0" startX="1002.0" startY="277.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="resultV1" endX="1037.0" endY="415.0" startX="1037.0" startY="344.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="resultV2" endX="282.0" endY="415.0" startX="282.0" startY="257.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="wd3V" endX="568.0" endY="415.0" startX="568.0" startY="328.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="pcPlus4V1" endX="298.0" endY="384.0" startX="298.0" startY="274.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="pcPlus4V2" endX="445.0" endY="384.0" startX="445.0" startY="357.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="pcV" endX="382.0" endY="344.0" startX="382.0" startY="265.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+            <Line fx:id="extImmV" endX="715.0" endY="383.0" startX="715.0" startY="304.0" stroke="#ff0000" strokeWidth="3.0" visible="false" />
+          </children></Pane>
+      <Separator prefWidth="200.0" />
+      <FlowPane fx:id="buttonPane" alignment="CENTER" hgap="30.0" prefHeight="43.0" prefWidth="1337.0">
+         <children>
+            <Button fx:id="prev" alignment="CENTER" mnemonicParsing="false" onAction="#prevButtonClicked" text="Prev" />
+            <Button fx:id="next" mnemonicParsing="false" onAction="#nextButtonClicked" text="Next" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </FlowPane>
+      <TextArea fx:id="steps" editable="false" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" style="-fx-focus-color: transparent" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font></TextArea>
+   </children>
+</VBox>
